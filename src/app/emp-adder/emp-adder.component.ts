@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { EmployeeService } from '../services/employee.service';
 
 @Component({
   selector: 'app-emp-adder',
@@ -17,7 +18,7 @@ export class EmpAdderComponent {
     'doctoral or equivalent',
   ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private empService: EmployeeService) {
     this.empForm = this.fb.group({
       name: '',
       surname: '',
@@ -29,5 +30,11 @@ export class EmpAdderComponent {
       experience: '',
       expectedSalary: '',
     });
+  }
+
+  onSubmit() {
+    if (this.empForm.valid) {
+      console.log(this.empForm.value);
+    }
   }
 }

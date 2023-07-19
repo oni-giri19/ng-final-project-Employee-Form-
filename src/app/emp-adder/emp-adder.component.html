@@ -1,7 +1,7 @@
 <div mat-dialog-title>
     New Employee
 </div>
-<form [formGroup]="empForm">
+<form [formGroup]="empForm" (ngSubmit)="onSubmit()">
     <div mat-dialog-content class="emp-container">
         <div class="emp-content">
             <mat-form-field appearance="outline">
@@ -61,6 +61,6 @@
     </div>
     <div mat-dialog-actions class="form-btn">
         <button mat-raised-button style=" background-color: rgb(178, 23, 76); color: white;">discard</button>
-        <button mat-raised-button color="primary">save</button>
+        <button mat-raised-button color="primary" type="submit">save</button>
     </div>
 </form>
