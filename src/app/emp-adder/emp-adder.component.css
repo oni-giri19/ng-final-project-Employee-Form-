@@ -1,0 +1,21 @@
+.emp-container {
+  padding-top: 12px;
+}
+.emp-content {
+  display: flex;
+  gap: 12px;
+}
+.emp-gender {
+  margin-bottom: 11px;
+  padding-left: 2px;
+  display: flex;
+}
+mat-form-field {
+  width: 100%;
+}
+.form-btn {
+  display: flex;
+  justify-content: end;
+  padding-right: 24px;
+  flex-grow: 1 1;
+}

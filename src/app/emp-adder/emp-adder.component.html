@@ -1,0 +1,66 @@
+<div mat-dialog-title>
+    New Employee
+</div>
+<form [formGroup]="empForm">
+    <div mat-dialog-content class="emp-container">
+        <div class="emp-content">
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input placeholder="First Name Here" matInput formControlName="name">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Surname</mat-label>
+                <input placeholder="Last Name Here" matInput formControlName="surname">
+            </mat-form-field>
+        </div>
+        <div class="emp-gender">
+            <mat-radio-group aria-label="Select an option" formControlName="gender">
+                <mat-label><strong>Gender</strong></mat-label>
+                <mat-radio-button color="primary" value="male">Male</mat-radio-button>
+                <mat-radio-button color="primary" value="female">Female</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="emp-content">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input type="email" placeholder="name@gmail.com" matInput formControlName="email">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Date of Birth</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="dateOfBirth">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="emp-content">
+            <mat-form-field appearance="outline">
+                <mat-label>Education</mat-label>
+                <mat-select formControlName="education">
+                    <mat-option *ngFor="let val of education" [value]="val">
+                        {{ val }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Company</mat-label>
+                <input placeholder="Last company worked" matInput formControlName="company">
+            </mat-form-field>
+        </div>
+        <div class="emp-content">
+            <mat-form-field appearance="outline">
+                <mat-label>Years of experience</mat-label>
+                <input placeholder="3 years" matInput type="number" formControlName="experience">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Expected salary</mat-label>
+                <input placeholder="2000$" matInput type="number" formControlName="expectedSalary">
+            </mat-form-field>
+        </div>
+
+    </div>
+    <div mat-dialog-actions class="form-btn">
+        <button mat-raised-button style=" background-color: rgb(178, 23, 76); color: white;">discard</button>
+        <button mat-raised-button color="primary">save</button>
+    </div>
+</form>
