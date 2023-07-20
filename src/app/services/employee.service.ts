@@ -8,6 +8,6 @@ export class EmployeeService {
   constructor(private http: HttpClient) {}
 
   addEmp(data: any) {
-    return this.http.post('http://localhost:3000/employees', data);
+    return this.http.post(' http://localhost:3000/employees', data);
   }
 }

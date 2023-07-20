@@ -15,7 +15,7 @@ mat-form-field {
 }
 .form-btn {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   padding-right: 24px;
   flex-grow: 1 1;
 }

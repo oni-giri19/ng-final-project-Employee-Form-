@@ -16,5 +16,18 @@
   "profile": {
     "name": "typicode"
   },
-  "employees": []
+  "employees": [
+    {
+      "name": "asdasdasd",
+      "surname": "asdasdasdasd",
+      "email": "asdasdawd@asdasd",
+      "dateOfBirth": "2023-07-13T20:00:00.000Z",
+      "gender": "male",
+      "education": "master's",
+      "company": "awdadwd",
+      "experience": 2,
+      "expectedSalary": 22323,
+      "id": 1
+    }
+  ]
 }
