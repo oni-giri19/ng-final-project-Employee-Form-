@@ -18,30 +18,6 @@
   },
   "employees": [
     {
-      "name": "asdasdasd",
-      "surname": "asdasdasdasd",
-      "email": "asdasdawd@asdasd",
-      "dateOfBirth": "2023-07-13T20:00:00.000Z",
-      "gender": "male",
-      "education": "master's",
-      "company": "awdadwd",
-      "experience": 2,
-      "expectedSalary": 22323,
-      "id": 1
-    },
-    {
-      "name": "asdasdasd",
-      "surname": "asdasdasdasd",
-      "email": "asdasdawd@asdasd",
-      "dateOfBirth": "2023-07-13T20:00:00.000Z",
-      "gender": "male",
-      "education": "master's",
-      "company": "awdadwd",
-      "experience": 2,
-      "expectedSalary": 22323,
-      "id": 2
-    },
-    {
       "name": "test",
       "surname": "employee",
       "email": "testemp@gmail.com",
@@ -52,6 +28,42 @@
       "experience": 5,
       "expectedSalary": 5000,
       "id": 3
+    },
+    {
+      "name": "test2",
+      "surname": "test2",
+      "email": "test2@gmail.com",
+      "dateOfBirth": "2016-01-11T20:00:00.000Z",
+      "gender": "female",
+      "education": "primary",
+      "company": "somecompany",
+      "experience": 2,
+      "expectedSalary": 1500,
+      "id": 4
+    },
+    {
+      "name": "another",
+      "surname": "test",
+      "email": "mmm@gmail.com",
+      "dateOfBirth": "2001-05-13T19:00:00.000Z",
+      "gender": "male",
+      "education": "bachelor's",
+      "company": "blablabla",
+      "experience": 1,
+      "expectedSalary": 1350,
+      "id": 5
+    },
+    {
+      "name": "test3",
+      "surname": "person",
+      "email": "test3@gmail.com",
+      "dateOfBirth": "2023-07-19T20:00:00.000Z",
+      "gender": "female",
+      "education": "no education",
+      "company": "wowcompany",
+      "experience": 0,
+      "expectedSalary": 8,
+      "id": 6
     }
   ]
 }

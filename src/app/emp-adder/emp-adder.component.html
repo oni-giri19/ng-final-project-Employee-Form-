@@ -60,7 +60,8 @@
 
     </div>
     <div mat-dialog-actions class="form-btn">
-        <button mat-raised-button style=" background-color: rgb(178, 23, 76); color: white;">discard</button>
+        <button mat-raised-button type="button" [mat-dialog-close]="false"
+            style=" background-color: rgb(178, 23, 76); color: white;">discard</button>
         <button mat-raised-button color="primary" type="submit">save</button>
     </div>
 </form>
