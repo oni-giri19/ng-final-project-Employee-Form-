@@ -10,4 +10,8 @@ export class EmployeeService {
   addEmp(data: any) {
     return this.http.post(' http://localhost:3000/employees', data);
   }
+
+  getEmpList() {
+    return this.http.get(' http://localhost:3000/employees');
+  }
 }
