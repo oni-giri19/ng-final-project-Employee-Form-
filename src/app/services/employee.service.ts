@@ -8,11 +8,15 @@ import { Observable } from 'rxjs';
 export class EmployeeService {
   constructor(private http: HttpClient) {}
 
-  addEmp(data: any) {
+  addEmp(data: any): Observable<any> {
     return this.http.post(' http://localhost:3000/employees', data);
   }
 
-  getEmpList() {
+  editEmp(id: number, data: any): Observable<any> {
+    return this.http.put(` http://localhost:3000/employees/${id}`, data);
+  }
+
+  getEmpList(): Observable<any> {
     return this.http.get(' http://localhost:3000/employees');
   }
 

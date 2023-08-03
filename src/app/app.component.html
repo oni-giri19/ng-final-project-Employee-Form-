@@ -16,7 +16,7 @@
     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
   </mat-form-field>
 
-  <div class="child-container">
+  <div style="overflow-x:auto;" class="child-container">
     <table mat-table [dataSource]="dataSource" matSort>
 
       <!-- ID Column -->
@@ -74,7 +74,7 @@
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Edit/Delete </th>
         <td mat-cell *matCellDef="let row">
-          <button mat-icon-button style="color: rgb(178, 23, 76);">
+          <button mat-icon-button style="color: rgb(178, 23, 76);" (click)="empEditForm(row)">
             <mat-icon>edit</mat-icon>
           </button>
           <button mat-icon-button color="primary" (click)="onEmpDelete(row.id)">

@@ -62,6 +62,6 @@
     <div mat-dialog-actions class="form-btn">
         <button mat-raised-button type="button" [mat-dialog-close]="false"
             style=" background-color: rgb(178, 23, 76); color: white;">discard</button>
-        <button mat-raised-button color="primary" type="submit">save</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'update' : 'save'}}</button>
     </div>
 </form>
