@@ -6,12 +6,22 @@
         <div class="emp-content">
             <mat-form-field appearance="outline">
                 <mat-label>Name</mat-label>
-                <input placeholder="First Name Here" matInput formControlName="name">
+                <input placeholder="First Name Here" matInput formControlName="name" required>
+                <mat-error style="text-align: center;"
+                    *ngIf="controls['name'].invalid && controls['name'].hasError('required')">
+                    Name must contain minimum 2 characters!
+                </mat-error>
             </mat-form-field>
+
             <mat-form-field appearance="outline">
                 <mat-label>Surname</mat-label>
-                <input placeholder="Last Name Here" matInput formControlName="surname">
+                <input placeholder="Last Name Here" matInput formControlName="surname" required>
+                <mat-error style="text-align: center;"
+                    *ngIf="controls['surname'].invalid && controls['surname'].hasError('required')">
+                    Surname must contain minimum 2 characters!
+                </mat-error>
             </mat-form-field>
+
         </div>
         <div class="emp-gender">
             <mat-radio-group aria-label="Select an option" formControlName="gender">
@@ -23,14 +33,28 @@
         <div class="emp-content">
             <mat-form-field appearance="outline">
                 <mat-label>Email</mat-label>
-                <input type="email" placeholder="name@gmail.com" matInput formControlName="email">
+                <input type="email" placeholder="name@gmail.com" matInput formControlName="email" required>
+                <mat-error *ngIf="controls['email'].invalid && controls['email'].dirty">
+                    Must be a valid e-mail!
+                </mat-error>
+                <mat-error *ngIf="controls['email'].invalid && controls['email'].hasError('required')">
+                    Email is required!
+                </mat-error>
             </mat-form-field>
+
             <mat-form-field appearance="outline">
                 <mat-label>Date of Birth</mat-label>
-                <input matInput [matDatepicker]="picker" formControlName="dateOfBirth">
+                <input matInput [matDatepicker]="picker" formControlName="dateOfBirth" required>
                 <mat-hint>MM/DD/YYYY</mat-hint>
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="controls['dateOfBirth'].invalid && controls['dateOfBirth'].hasError('required')">
+                    Date of Birth is required!
+                </mat-error>
+                <mat-error *ngIf="controls['dateOfBirth'].invalid && controls['dateOfBirth'].hasError('invalidAge')">
+                    Minimum age is 18!
+                </mat-error>
+
             </mat-form-field>
         </div>
         <div class="emp-content">
@@ -44,17 +68,33 @@
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Company</mat-label>
-                <input placeholder="Last company worked" matInput formControlName="company">
+                <input placeholder="Last company worked" matInput formControlName="company" required>
+                <mat-error *ngIf="controls['company'].invalid && controls['company'].hasError('required')">
+                    Company name is required!
+                </mat-error>
             </mat-form-field>
         </div>
         <div class="emp-content">
             <mat-form-field appearance="outline">
                 <mat-label>Years of experience</mat-label>
-                <input placeholder="3 years" matInput type="number" formControlName="experience">
+                <input placeholder="3 years" matInput type="number" formControlName="experience" required>
+                <mat-error *ngIf="controls['experience'].invalid && controls['experience'].hasError('required')">
+                    Years of experience is required!
+                </mat-error>
+                <mat-error *ngIf="controls['experience'].invalid && controls['experience'].hasError('min')">
+                    Years of experience cannot be negative!
+                </mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Expected salary</mat-label>
-                <input placeholder="2000$" matInput type="number" formControlName="expectedSalary">
+                <input placeholder="2000$" matInput type="number" formControlName="expectedSalary" required>
+                <mat-error
+                    *ngIf="controls['expectedSalary'].invalid && controls['expectedSalary'].hasError('required')">
+                    Expected salary is required!
+                </mat-error>
+                <mat-error *ngIf="controls['expectedSalary'].invalid && controls['expectedSalary'].hasError('min')">
+                    Expected salary cannot be negative!
+                </mat-error>
             </mat-form-field>
         </div>
 

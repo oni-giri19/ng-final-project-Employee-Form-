@@ -18,32 +18,8 @@
   },
   "employees": [
     {
-      "name": "test",
-      "surname": "employee",
-      "email": "testemp@gmail.com",
-      "dateOfBirth": "1993-11-10T21:00:00.000Z",
-      "gender": "female",
-      "education": "master's",
-      "company": "testcompany",
-      "experience": 5,
-      "expectedSalary": 5000,
-      "id": 3
-    },
-    {
-      "name": "test2",
-      "surname": "test2",
-      "email": "test2@gmail.com",
-      "dateOfBirth": "2016-01-11T20:00:00.000Z",
-      "gender": "female",
-      "education": "primary",
-      "company": "somecompany",
-      "experience": 2,
-      "expectedSalary": 1500,
-      "id": 4
-    },
-    {
-      "name": "test33333",
-      "surname": "person",
+      "name": "George W.",
+      "surname": "Bush",
       "email": "test3@gmail.com",
       "dateOfBirth": "2023-07-19T20:00:00.000Z",
       "gender": "female",
@@ -52,6 +28,42 @@
       "experience": 1,
       "expectedSalary": 8000,
       "id": 6
+    },
+    {
+      "name": "SUPER",
+      "surname": "MAN",
+      "email": "super@gmail.com",
+      "dateOfBirth": "1974-02-11T20:00:00.000Z",
+      "gender": "male",
+      "education": "doctoral or equivalent",
+      "company": "HEROES.CO",
+      "experience": 35,
+      "expectedSalary": 100000,
+      "id": 7
+    },
+    {
+      "name": "ss",
+      "surname": "ss",
+      "email": "ss@asd",
+      "dateOfBirth": "1993-02-10T21:00:00.000Z",
+      "gender": "male",
+      "education": "",
+      "company": "asdasdad",
+      "experience": 3,
+      "expectedSalary": 2522,
+      "id": 8
+    },
+    {
+      "name": "Bill",
+      "surname": "Gates",
+      "email": "gates@gmail.com",
+      "dateOfBirth": "1945-02-13T21:00:00.000Z",
+      "gender": "male",
+      "education": "primary",
+      "company": "mercedes",
+      "experience": 12,
+      "expectedSalary": 100000,
+      "id": 9
     }
   ]
 }

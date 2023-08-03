@@ -1,6 +1,7 @@
 import { Component, Inject, inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CoreService } from '../core/core.service';
 import { EmployeeService } from '../services/employee.service';
 
 @Component({
@@ -23,18 +24,33 @@ export class EmpAdderComponent implements OnInit {
     private fb: FormBuilder,
     private empService: EmployeeService,
     private dialogRef: MatDialogRef<EmpAdderComponent>,
+    private coreService: CoreService,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.empForm = this.fb.group({
-      name: '',
-      surname: '',
-      email: '',
-      dateOfBirth: '',
+      name: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.pattern(/^[A-z]/),
+        ],
+      ],
+      surname: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.pattern(/^[A-z]/),
+        ],
+      ],
+      email: ['', [Validators.required, Validators.email]],
+      dateOfBirth: ['', [Validators.required, this.validateAge]],
       gender: '',
-      education: '',
-      company: '',
-      experience: '',
-      expectedSalary: '',
+      education: ['no education', Validators.required],
+      company: ['', [Validators.required]],
+      experience: ['', [Validators.min(0), Validators.required]],
+      expectedSalary: ['', [Validators.min(0), Validators.required]],
     });
   }
 
@@ -47,7 +63,7 @@ export class EmpAdderComponent implements OnInit {
       if (this.data) {
         this.empService.editEmp(this.data.id, this.empForm.value).subscribe({
           next: (value: any) => {
-            alert('updated successfully');
+            this.coreService.openSnackBar('updated successfully');
             this.dialogRef.close(true);
           },
           error: (error: any) => {
@@ -57,7 +73,7 @@ export class EmpAdderComponent implements OnInit {
       } else {
         this.empService.addEmp(this.empForm.value).subscribe({
           next: (value: any) => {
-            alert('employee added successfully');
+            this.coreService.openSnackBar('employee added successfully');
             this.dialogRef.close(true);
           },
           error: (error: any) => {
@@ -66,5 +82,20 @@ export class EmpAdderComponent implements OnInit {
         });
       }
     }
+  }
+  get controls() {
+    return this.empForm.controls;
+  }
+  //this validates DOB to be >18 years of age
+  validateAge(control: any) {
+    const today = new Date();
+    const birthDate = new Date(control.value);
+    const age = today.getFullYear() - birthDate.getFullYear();
+
+    if (age < 18) {
+      return { invalidAge: true };
+    }
+
+    return null;
   }
 }

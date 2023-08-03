@@ -5,6 +5,7 @@ import { EmployeeService } from './services/employee.service';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { CoreService } from './core/core.service';
 
 @Component({
   selector: 'app-root',
@@ -30,7 +31,11 @@ export class AppComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private dialog: MatDialog, private empService: EmployeeService) {}
+  constructor(
+    private dialog: MatDialog,
+    private empService: EmployeeService,
+    private coreService: CoreService
+  ) {}
 
   ngOnInit(): void {
     this.onGetEmpList();
@@ -71,7 +76,7 @@ export class AppComponent implements OnInit {
   onEmpDelete(id: number) {
     this.empService.empDelete(id).subscribe({
       next: (response) => {
-        alert('Employee Removed Successfully');
+        this.coreService.openSnackBar('Employee Removed Successfully', 'done');
         this.onGetEmpList();
       },
       error: console.log,
