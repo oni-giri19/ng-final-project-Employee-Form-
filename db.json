@@ -42,18 +42,6 @@
       "id": 7
     },
     {
-      "name": "ss",
-      "surname": "ss",
-      "email": "ss@asd",
-      "dateOfBirth": "1993-02-10T21:00:00.000Z",
-      "gender": "male",
-      "education": "",
-      "company": "asdasdad",
-      "experience": 3,
-      "expectedSalary": 2522,
-      "id": 8
-    },
-    {
       "name": "Bill",
       "surname": "Gates",
       "email": "gates@gmail.com",
@@ -64,6 +52,30 @@
       "experience": 12,
       "expectedSalary": 100000,
       "id": 9
+    },
+    {
+      "name": "gugle",
+      "surname": "mugle",
+      "email": "blabla@gmail.com",
+      "dateOfBirth": "1997-02-02T19:00:00.000Z",
+      "gender": "male",
+      "education": "primary",
+      "company": "someCompany",
+      "experience": 2,
+      "expectedSalary": 5000,
+      "id": 10
+    },
+    {
+      "name": "test",
+      "surname": "one",
+      "email": "test@gmail.com",
+      "dateOfBirth": "1998-12-11T20:00:00.000Z",
+      "gender": "male",
+      "education": "primary",
+      "company": "lolcompany",
+      "experience": 1,
+      "expectedSalary": 1000,
+      "id": 11
     }
   ]
 }

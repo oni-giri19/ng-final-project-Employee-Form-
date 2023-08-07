@@ -26,6 +26,7 @@ export class AppComponent implements OnInit {
     'expectedSalary',
     'action',
   ];
+  //Using this makes the employee info table possible
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -40,7 +41,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.onGetEmpList();
   }
-
+  //When "+employee" button is pressed emp-adder-component is opened
   empAddForm() {
     const dialogRef = this.dialog.open(EmpAdderComponent);
     dialogRef.afterClosed().subscribe({
@@ -51,7 +52,7 @@ export class AppComponent implements OnInit {
       },
     });
   }
-
+  //Get employee list and manipulate data
   onGetEmpList() {
     this.empService.getEmpList().subscribe({
       next: (response: any) => {
@@ -64,7 +65,7 @@ export class AppComponent implements OnInit {
       },
     });
   }
-
+  //Filter logic, as shown in material-angular example
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -73,6 +74,7 @@ export class AppComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+  //Employee delete logic
   onEmpDelete(id: number) {
     this.empService.empDelete(id).subscribe({
       next: (response) => {

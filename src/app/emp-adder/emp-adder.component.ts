@@ -10,8 +10,9 @@ import { EmployeeService } from '../services/employee.service';
   styleUrls: ['./emp-adder.component.css'],
 })
 export class EmpAdderComponent implements OnInit {
+  //Declared employee form here
   empForm: FormGroup;
-
+  //Created array of education levels here
   education: string[] = [
     'no education',
     'primary',
@@ -83,6 +84,7 @@ export class EmpAdderComponent implements OnInit {
       }
     }
   }
+  //Get controls so they're easily accessable
   get controls() {
     return this.empForm.controls;
   }
