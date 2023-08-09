@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Delete employee</h1>
+<div mat-dialog-content>
+    You are about to delete an employee, proceed?
+</div>
+<div class="btns" mat-dialog-actions>
+    <button mat-raised-button mat-dialog-close
+        style=" background-color: rgb(178, 23, 76); color: white;">Cancel</button>
+    <button mat-raised-button color="primary" (click)="onEmpDeleteConfirm()" cdkFocusInitial>Confirm</button>
+</div>

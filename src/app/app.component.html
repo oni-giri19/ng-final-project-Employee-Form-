@@ -75,7 +75,10 @@
           <button class="btn-edit" mat-icon-button style="color: rgb(178, 23, 76);" (click)="empEditForm(row)">
             <mat-icon>edit</mat-icon>
           </button>
-          <button class="btn-delete" mat-icon-button color="primary" (click)="onEmpDelete(row.id)">
+          <!-- <button class="btn-delete" mat-icon-button color="primary" (click)="onEmpDelete(row.id)">
+            <mat-icon>delete</mat-icon>
+          </button> -->
+          <button mat-icon-button color="primary" (click)="openDeleteDialog(row.id)">
             <mat-icon>delete</mat-icon>
           </button>
         </td>

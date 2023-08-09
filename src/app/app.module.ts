@@ -22,9 +22,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { EmpDLTConfirmComponent } from './emp-dlt-confirm/emp-dlt-confirm.component';
 
 @NgModule({
-  declarations: [AppComponent, EmpAdderComponent],
+  declarations: [AppComponent, EmpAdderComponent, EmpDLTConfirmComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

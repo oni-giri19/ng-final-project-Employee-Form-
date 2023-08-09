@@ -6,6 +6,8 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { CoreService } from './core/core.service';
+import { Data } from '@angular/router';
+import { EmpDLTConfirmComponent } from './emp-dlt-confirm/emp-dlt-confirm.component';
 
 @Component({
   selector: 'app-root',
@@ -27,7 +29,7 @@ export class AppComponent implements OnInit {
     'action',
   ];
   //Using this makes the employee info table possible
-  dataSource!: MatTableDataSource<any>;
+  dataSource!: MatTableDataSource<string | null>; // changed type <any> to <string|null>
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -52,15 +54,28 @@ export class AppComponent implements OnInit {
       },
     });
   }
+  //employee delete before confirming the actual delete
+  openDeleteDialog(employeeId: number) {
+    const deleteDialogRef = this.dialog.open(EmpDLTConfirmComponent, {
+      data: { employeeId },
+    });
+    deleteDialogRef.afterClosed().subscribe({
+      next: (value) => {
+        if (value) {
+          this.onGetEmpList();
+        }
+      },
+    });
+  }
   //Get employee list and manipulate data
   onGetEmpList() {
     this.empService.getEmpList().subscribe({
-      next: (response: any) => {
+      next: (response) => {
         this.dataSource = new MatTableDataSource(response);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
       },
-      error: (error) => {
+      error: (error: string) => {
         console.log(error);
       },
     });
@@ -74,17 +89,21 @@ export class AppComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+
   //Employee delete logic
-  onEmpDelete(id: number) {
-    this.empService.empDelete(id).subscribe({
-      next: (response) => {
-        this.coreService.openSnackBar('Employee Removed Successfully', 'done');
-        this.onGetEmpList();
-      },
-      error: console.log,
-    });
-  }
-  empEditForm(data: any) {
+  // onEmpDelete(id: number) {
+  //   this.empService.empDelete(id).subscribe({
+  //     next: (response) => {
+  //       this.coreService.openSnackBar('Employee Removed Successfully', 'done');
+  //       this.onGetEmpList();
+  //     },
+  //     error: console.log,
+  //   });
+  // }
+
+  //Employee edit info logic
+  empEditForm(data: Data) {
+    //set data type :Data instead of :any
     const dialogRef = this.dialog.open(EmpAdderComponent, {
       data: data,
     });
