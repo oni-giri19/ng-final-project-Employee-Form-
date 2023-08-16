@@ -55,9 +55,9 @@ export class AppComponent implements OnInit {
     });
   }
   //employee delete before confirming the actual delete
-  openDeleteDialog(employeeId: number) {
+  openDeleteDialog(employeeId: number, employeeName: string) {
     const deleteDialogRef = this.dialog.open(EmpDLTConfirmComponent, {
-      data: { employeeId },
+      data: { employeeId, employeeName },
     });
     deleteDialogRef.afterClosed().subscribe({
       next: (value) => {

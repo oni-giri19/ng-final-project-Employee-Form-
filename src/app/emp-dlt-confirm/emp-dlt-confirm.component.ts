@@ -14,7 +14,8 @@ export class EmpDLTConfirmComponent {
     private dialogRef: MatDialogRef<EmpDLTConfirmComponent>,
     private empService: EmployeeService,
     private coreService: CoreService,
-    @Inject(MAT_DIALOG_DATA) public data: { employeeId: number } // Inject data object
+    @Inject(MAT_DIALOG_DATA)
+    public data: { employeeId: number; employeeName: string } // Inject data object
   ) {}
 
   onEmpDeleteConfirm() {
