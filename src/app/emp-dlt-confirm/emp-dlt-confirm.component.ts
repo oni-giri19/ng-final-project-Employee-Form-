@@ -14,6 +14,7 @@ export class EmpDLTConfirmComponent {
     private dialogRef: MatDialogRef<EmpDLTConfirmComponent>,
     private empService: EmployeeService,
     private coreService: CoreService,
+
     @Inject(MAT_DIALOG_DATA)
     public data: { employeeId: number; employeeName: string } // Inject data object
   ) {}
@@ -25,7 +26,10 @@ export class EmpDLTConfirmComponent {
         this.coreService.openSnackBar('Employee Removed Successfully');
         this.dialogRef.close(true);
       },
-      error: console.log,
+      error: (error) => {
+        console.error(error);
+        this.coreService.openSnackBar("couldn't remove employee");
+      },
     });
   }
 }

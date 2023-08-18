@@ -1,0 +1,13 @@
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 400;
+  margin-right: 15px;
+  margin-top: 9px;
+}
+a {
+  text-decoration: none;
+  color: white;
+}

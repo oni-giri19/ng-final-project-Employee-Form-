@@ -1,0 +1,48 @@
+<ng-container *ngIf="vm$ | async as vm">
+    <form #signInForm="ngForm">
+        <div class="inputs-and-btn">
+            <div class="inputs">
+                <div>
+                    <label for="username">Username</label>
+                    <div>
+                        <input type="text" name="username" id="username" required [(ngModel)]="signInData.username"
+                            #usernameCtrl="ngModel" />
+                    </div>
+                    <div class="invalid" *ngIf="usernameCtrl.invalid && usernameCtrl.dirty">
+                        <p>Email is required!</p>
+                    </div>
+                </div>
+                <div>
+                    <label for="inputPassword">Password</label>
+                    <div>
+                        <input name="password" type="password" id="inputPassword" required
+                            [(ngModel)]="signInData.password" #passwordCtrl="ngModel" />
+                    </div>
+                    <div class="invalid" *ngIf="passwordCtrl.invalid && passwordCtrl.dirty">
+                        <p>Password is required!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="invalid" *ngIf="vm.errorMsg">
+                {{ vm.errorMsg }}
+            </div>
+            <button (click)="onSubmit()" [disabled]="signInForm.invalid">
+                <ng-container *ngIf="!vm.loading">Log in</ng-container>
+            </button>
+        </div>
+    </form>
+</ng-container>
+<!-- <ng-container *ngIf="vm$ | async as vm">
+    <form #signInForm="ngForm">
+        <div mat-dialog-content class="emp-container">
+            <mat-form-field appearance="outline">
+                <mat-label>Userame</mat-label>
+                <input placeholder="Username Here" matInput formControlName="username" required
+                    [(ngModel)]="signInData.username" #usernameCtrl="ngModel">
+                <mat-error style="text-align: center;" *ngIf="usernameCtrl.invalid && usernameCtrl.dirty">
+                    Username is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </form>
+</ng-container> -->

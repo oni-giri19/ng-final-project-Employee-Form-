@@ -1,0 +1,29 @@
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.inputs label {
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-style: normal;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.inputs input {
+  padding: 5px;
+}
+.inputs-and-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5px auto;
+  gap: 5px;
+}
+.inputs-and-btn button {
+  padding: 5px 25px;
+  margin-top: 10px;
+  background-color: rgb(178, 23, 76);
+  color: white;
+  border-radius: 5px;
+}

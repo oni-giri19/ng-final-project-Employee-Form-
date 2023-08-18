@@ -1,0 +1,16 @@
+<div class="navbar">
+    <div>
+        <button style="background-color: rgb(178, 23, 76);" mat-raised-button><a routerLink="/login"
+                routerLinkActive="active">employee data</a></button>
+    </div>
+    <div>
+        <button style="background-color: rgb(178, 23, 76);" mat-raised-button><a class="nav-link" routerLink="/login"
+                routerLinkActive="active">Log in</a></button>
+    </div>
+    <ng-container *ngIf="user">
+        <div>
+            <button color="primary" mat-raised-button><a class="nav-link" routerLink="/" (click)="signOut.emit()">Log
+                    out</a></button>
+        </div>
+    </ng-container>
+</div>

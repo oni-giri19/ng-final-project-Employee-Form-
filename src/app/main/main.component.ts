@@ -1,21 +1,20 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { EmpAdderComponent } from './emp-adder/emp-adder.component';
-import { EmployeeService } from './services/employee.service';
-import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { CoreService } from './core/core.service';
 import { Data } from '@angular/router';
-import { EmpDLTConfirmComponent } from './emp-dlt-confirm/emp-dlt-confirm.component';
-import { AuthService } from './services/auth.service';
+import { EmpAdderComponent } from '../emp-adder/emp-adder.component';
+import { EmpDLTConfirmComponent } from '../emp-dlt-confirm/emp-dlt-confirm.component';
+import { AuthService } from '../services/auth.service';
+import { EmployeeService } from '../services/employee.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-main',
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.css'],
 })
-export class AppComponent implements OnInit {
+export class MainComponent {
   user$ = this.authService.user;
   displayedColumns: string[] = [
     'id',
@@ -72,7 +71,7 @@ export class AppComponent implements OnInit {
   //Get employee list and manipulate data
   onGetEmpList() {
     this.empService.getEmpList().subscribe({
-      next: (response) => {
+      next: (response: (string | null)[] | undefined) => {
         this.dataSource = new MatTableDataSource(response);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;

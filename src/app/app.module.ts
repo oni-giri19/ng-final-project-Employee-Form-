@@ -23,9 +23,22 @@ import { MatSortModule } from '@angular/material/sort';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { EmpDLTConfirmComponent } from './emp-dlt-confirm/emp-dlt-confirm.component';
-
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
+import { APP_ROUTES } from './app.routing';
+import { LoginComponent } from './login/login.component';
+import { HeaderComponent } from './header/header.component';
+import { MainComponent } from './main/main.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
-  declarations: [AppComponent, EmpAdderComponent, EmpDLTConfirmComponent],
+  declarations: [
+    AppComponent,
+    EmpAdderComponent,
+    EmpDLTConfirmComponent,
+    LoginComponent,
+    HeaderComponent,
+    MainComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -47,6 +60,9 @@ import { EmpDLTConfirmComponent } from './emp-dlt-confirm/emp-dlt-confirm.compon
     MatSortModule,
     FlexLayoutModule,
     MatSnackBarModule,
+    AppRoutingModule,
+    FormsModule,
+    RouterModule.forRoot(APP_ROUTES),
   ],
   providers: [],
   bootstrap: [AppComponent],
