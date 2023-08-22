@@ -41,7 +41,7 @@ export class AuthService {
       this.user$.next(JSON.parse(user));
     }
   }
-
+  //Sign in logic using dummyjson.com AUTH feature
   signIn(credentials: LoginCredentials) {
     return this.http.post<User>(`${this.authUrl}/auth/login`, credentials).pipe(
       tap((response) => {
@@ -57,19 +57,19 @@ export class AuthService {
       })
     );
   }
-
+  //Sign out logic
   signOut() {
     localStorage.removeItem(ENVIRONMENT.userKey);
     localStorage.removeItem(ENVIRONMENT.tokenKey);
     this.user$.next(null);
   }
 
-  getUserId() {
-    const userStr = localStorage.getItem(ENVIRONMENT.userKey);
-    if (userStr) {
-      const user = JSON.parse(userStr) as User;
-      return user.id;
-    }
-    return null;
-  }
+  // getUserId() {
+  //   const userStr = localStorage.getItem(ENVIRONMENT.userKey);
+  //   if (userStr) {
+  //     const user = JSON.parse(userStr) as User;
+  //     return user.id;
+  //   }
+  //   return null;
+  // }
 }

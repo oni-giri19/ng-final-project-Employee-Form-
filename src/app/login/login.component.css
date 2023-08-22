@@ -19,6 +19,7 @@
   align-items: center;
   margin: 5px auto;
   gap: 5px;
+  height: 83vh;
 }
 .inputs-and-btn button {
   padding: 5px 25px;

@@ -32,7 +32,6 @@ export class LoginComponent {
     if (username && password) {
       this.authService.signIn(this.signInData).subscribe(() => {
         this.employeeService.getEmpList();
-        // this.router.navigate(['/main']);
       });
     }
   }
