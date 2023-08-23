@@ -1,4 +1,5 @@
 <ng-container *ngIf="vm$ | async as vm">
+    <!-- login: kminchelle password: 0lelplR -->
     <form #signInForm="ngForm">
         <div class="inputs-and-btn">
             <div class="inputs">
@@ -32,17 +33,3 @@
         </div>
     </form>
 </ng-container>
-<!-- <ng-container *ngIf="vm$ | async as vm">
-    <form #signInForm="ngForm">
-        <div mat-dialog-content class="emp-container">
-            <mat-form-field appearance="outline">
-                <mat-label>Userame</mat-label>
-                <input placeholder="Username Here" matInput formControlName="username" required
-                    [(ngModel)]="signInData.username" #usernameCtrl="ngModel">
-                <mat-error style="text-align: center;" *ngIf="usernameCtrl.invalid && usernameCtrl.dirty">
-                    Username is required
-                </mat-error>
-            </mat-form-field>
-        </div>
-    </form>
-</ng-container> -->
