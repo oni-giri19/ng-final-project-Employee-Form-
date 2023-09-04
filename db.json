@@ -100,6 +100,18 @@
       "experience": 10,
       "expectedSalary": 5000,
       "id": 15
+    },
+    {
+      "name": "blue",
+      "surname": "blue",
+      "email": "blue@gmail.com",
+      "dateOfBirth": "1989-01-04T20:00:00.000Z",
+      "gender": "male",
+      "education": "bachelor's",
+      "company": "blueCo",
+      "experience": 8,
+      "expectedSalary": 5600,
+      "id": 16
     }
   ]
 }
